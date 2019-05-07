@@ -4,7 +4,7 @@ Install
 
 Build
 - Git clone link in htdocs folder
-- Browser: localhost/projectKumarThong/file_name.php
+- Browser: localhost/projectAssignment/file_name.php
 
 Connect mysql
   ```$servername = "localhost";
