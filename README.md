@@ -14,3 +14,15 @@ Connect mysql
   // Use test database in any html page
   $use = "USE test";
   $conn->query($use);
+  
+  //create table items
+  $sql = "CREATE TABLE Items (
+  id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+  product VARCHAR(50) NOT NULL,
+  quality VARCHAR(30) NOT NULL,
+  code VARCHAR(50),
+  status VARCHAR(50),
+  timeDeli VARCHAR(50),
+  orderBy VARCHAR(50)
+  )";
+  $conn->query($sql);
