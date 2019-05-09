@@ -16,7 +16,7 @@ Connect mysql
   $conn->query($use);
   
   //create table items
-  $sql = "CREATE TABLE Items (
+  $sql = "CREATE TABLE items (
   id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
   name VARCHAR(50) NOT NULL,
   product VARCHAR(50) NOT NULL,
