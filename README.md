@@ -25,6 +25,7 @@ Connect mysql
   status VARCHAR(50),
   timeDeli VARCHAR(50),
   orderBy VARCHAR(50),
-  isDelivered BOOLEAN
+  isDelivered BOOLEAN,
+  haveCode BOOLEAN
   )";
   $conn->query($sql);
