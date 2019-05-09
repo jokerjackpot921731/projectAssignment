@@ -24,7 +24,7 @@ Connect mysql
   code VARCHAR(50),
   status VARCHAR(50),
   timeDeli VARCHAR(50),
-  isDelivered BOOLEAN,
-  haveCode BOOLEAN
+  isDelivered BOOLEAN DEFAULT '0',
+  haveCode BOOLEAN DEFAULT '0'
   )";
   $conn->query($sql);
