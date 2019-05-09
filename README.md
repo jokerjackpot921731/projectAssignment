@@ -24,7 +24,6 @@ Connect mysql
   code VARCHAR(50),
   status VARCHAR(50),
   timeDeli VARCHAR(50),
-  orderBy VARCHAR(50),
   isDelivered BOOLEAN,
   haveCode BOOLEAN
   )";
