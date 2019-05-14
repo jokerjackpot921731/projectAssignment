@@ -14,7 +14,7 @@
   if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
   } 
-  
+
   // Creating a database named newDB
   $sql = "CREATE DATABASE test";
   if ($conn->query($sql) === TRUE) {

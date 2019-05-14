@@ -38,8 +38,7 @@
 			  font-size: 20px;
 			  padding: 16px 0px;
 			  position: absolute;
-			  left: 50%;
-			  margin-left: -350px;
+			 			  margin-left: -350px;
 			  border: none;
 			  cursor: pointer;
 			  width: 50%;
