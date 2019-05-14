@@ -10,7 +10,7 @@
 		Id : <input type="text" name="id" /><br><br>
 		Column:
 		<select id='column' name='column'>
-			<option hidden selction>--select a column --</option>
+			<option hidden selction>--select a column--</option>
 			<option value="name">Name Product</option>
 			<option value="product">Link</option>
 			<option value="quality">Quality</option>
@@ -43,7 +43,7 @@
     	$value = isset($_POST['value']) ? $_POST['value'] : '';
     	$column = $_POST['column'];
 
-    	if($id && ($column != "--select a column") && $value){
+    	if($id && $value && (strcmp($column,'name')==0)){
     		$sql = "UPDATE items SET $column = '$value' WHERE Id = $id";
     		$conn->query($sql);
     		echo "Modified successfully.";
