@@ -10,7 +10,7 @@
 		Id : <input type="text" name="id" /><br><br>
 		Column:
 		<select id='column' name='column'>
-			<option hidden selction>--select a column--</option>
+			<option value="error" hidden selection>--select a column--</option>
 			<option value="name">Name Product</option>
 			<option value="product">Link</option>
 			<option value="quality">Quality</option>
@@ -43,10 +43,51 @@
     	$value = isset($_POST['value']) ? $_POST['value'] : '';
     	$column = $_POST['column'];
 
-    	if($id && $value && (strcmp($column,'name')==0)){
-    		$sql = "UPDATE items SET $column = '$value' WHERE Id = $id";
-    		$conn->query($sql);
-    		echo "Modified successfully.";
+    	// Check empty feilds
+    	if($id && $value && ($column!=="error")){
+    		// Check id is in database or not
+    		$id_query = "SELECT id FROM items WHERE id = $id";
+    		$check_id = $conn->query($id_query);
+    		if($check_id->num_rows != 0){
+    			switch ($column) {
+    				case 'quality':
+    					if(is_numeric($value)){
+    						if($value > 0){
+    							// Update value
+				    			$sql = "UPDATE items SET $column = '$value' WHERE id = $id";
+				    		    $conn->query($sql);
+				    		    echo "Modified successfully.";
+    						}else{
+    							echo "Quantity must be equal or greater than 0.";
+    						}
+    					}else{
+    						echo "Quantity should be a number.";
+    					}
+    					break;
+    				case 'code':
+    					if(strlen($value) < 30){
+    						// Update value
+			    			$sql = "UPDATE items SET $column = '$value' WHERE id = $id";
+			    		    $conn->query($sql);
+			    		    echo "Modified successfully.";
+    					}else{
+    						echo "Value is too long to storage.";
+    					}
+    					break;
+    				default:
+      					if(strlen($value) < 50){
+    						// Update value
+			    			$sql = "UPDATE items SET $column = '$value' WHERE id = $id";
+			    		    $conn->query($sql);
+			    		    echo "Modified successfully.";
+    					}else{
+    						echo "Value is too long to storage.";
+    					}
+    					break;
+    			}
+    		}else{
+    			echo "There are no matched Id.";
+    		}
     	}else{
     		echo "Required fields are missing.";
     	}
