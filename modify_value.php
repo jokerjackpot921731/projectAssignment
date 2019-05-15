@@ -1,7 +1,53 @@
 <!DOCTPE html>
 <html>
 <head>
-	<title></title>
+		<meta name="input" content="width=device-width, initial-scale=1">
+		<style type="text/css">
+			* {
+ 				 box-sizing: border-box;
+			}
+			/*class containers*/
+			.container {
+ 				 padding: 16px;
+			}
+			/*full-width input field*/
+			input[type=text], input[type=text] {
+				width: 100%;
+				padding: 15px;
+				margin: 5px 0 22px 0;
+				display: inline-block;
+				border: none;
+				background: #f1f1f1f1;
+			}
+			input[type=text]:focus, input[type=text]:focus{
+				background-color: #ddd;
+				outline: none;
+			}
+			.select{
+				width: 100%;
+				padding: 15px;
+				margin: 5px 0 22px 0;
+				display: inline-block;
+				border: none;
+				background: #f1f1f1f1;
+			}
+			/* Set a style for the submit/register button */
+			.submit {
+			  background-color: #07A7F9;
+			  color: black;
+			  font-size: 20px;
+			  padding: 16px 0px;
+			  position: absolute;
+			  left: 50%;
+			  margin-left: -350px;
+			  border: none;
+			  cursor: pointer;
+			  width: 50%;
+			  opacity: 0.9;
+			  font-weight: bold;
+			  font-family: "Times New Roman", Times, serif;
+			}
+		</style>
 </head>
 <body>
 	<h2 style="text-align: center;">MODIFY INFORMATION</h2>
@@ -9,7 +55,7 @@
 	<div class="container">
 		Id : <input type="text" name="id" /><br><br>
 		Column:
-		<select id='column' name='column'>
+		<select class="select" id='column' name='column'>
 			<option value="error" hidden selection>--select a column--</option>
 			<option value="name">Name Product</option>
 			<option value="product">Link</option>

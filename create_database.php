@@ -34,18 +34,16 @@
   //create table items
   $sql = "CREATE TABLE items (
   id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
-  name VARCHAR(50) NOT NULL,
+  name TEXT NOT NULL,
   product TEXT NOT NULL,
-  quality VARCHAR(30) NOT NULL,
-  code VARCHAR(50),
-  status VARCHAR(50),
-  timeDeli VARCHAR(50),
+  quality TEXT NOT NULL,
+  code TEXT,
+  status TEXT,
+  timeDeli TEXT,
   isDelivered BOOLEAN DEFAULT '0',
   haveCode BOOLEAN DEFAULT '0'
   )";
   $conn->query($sql);
-  echo "Create database successfully";
-  $conn->close();
   ?>
 
 </body>
