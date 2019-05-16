@@ -83,6 +83,9 @@
     	die('Could not connect: '. mysql_error());
     }
     $conn->query($use);
+    $id = null;
+    $value = null;
+    $column = null;
 
     if(isset($_POST['submit'])){
     	$id = isset($_POST['id']) ? $_POST['id'] : '';
@@ -138,6 +141,19 @@
     		echo "Required fields are missing.";
     	}
     }
+    // Create XML
+    $xml = new DOMdocument("1.0");
+    $xml->formatOutput = true;
+    $object = $xml->createElement("product");
+    $id_xml = $xml->createElement("id",$id);
+    $value_xml = $xml->createElement("value",$value);
+    $column_xml = $xml ->createElement("column",$column);
+    $xml->appendChild($object);
+    $object->appendChild($id_xml);
+    $object->appendChild($column_xml);
+    $object->appendChild($value_xml);
+
+    echo "<xmp>".$xml->saveXML()."</xmp>";
     $conn->close();
 ?>
 </body>
